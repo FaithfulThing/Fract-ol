@@ -6,7 +6,7 @@
 /*   By: cacesar- <cacesar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 11:59:23 by cacesar-          #+#    #+#             */
-/*   Updated: 2025/10/20 11:30:06 by cacesar-         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:05:07 by cacesar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include<limits.h>
 # include<unistd.h>
 # include<math.h>
-# include<mlx.h>
+# include"../minilibx-linux/minilibx-linux/mlx.h"
 # define LIBFT_H
 
 typedef struct s_list
@@ -56,6 +56,7 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 long long int	ft_atoi(const char *nptr);
+long double		ft_atof(char*nptr);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(char *src);
 char			*ft_substr(char const *s, unsigned int start, size_t len);

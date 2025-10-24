@@ -1,4 +1,4 @@
-NAME= pipex
+NAME= fractol
 
 cc= cc -g3
 
@@ -6,34 +6,39 @@ lib_path= libft
 
 lib = $(lib_path)/libft.a
 
+libx_path = minilibx-linux/minilibx-linux
+
+libx = $(libx_path)/libmlx.a
+
 flags=  -Wall\
 		-Werror\
 		-Wextra
 
-LibXflags=  -03\
+LibXflags=  -o3\
 			-lXext\
 			-lX11\
 			-lm\
 			-lmlx
 
-header= minitalk.h
+header= fract.h
 
-c_files= client.c
-
+c_files= fract-ol.c
 
 o_files= $(c_files:.c=.o)
 
+all: $(NAME)
 
-all: $(NAME) $(NAME2)
-
-$(NAME):$(o_files) $(header) $(lib)
-	$(cc) $(o_files) $(flags) $(LibXflags) -L$(lib_path) -lft -o $@
+$(NAME):$(o_files) $(header) $(lib)	$(libx)
+	$(cc) $(o_files) $(flags) $(LibXflags) -L$(libx_path) -L$(lib_path) -lft -o $@
 
 $(lib):
 	@$(MAKE) -s -C $(lib_path)
 
+$(libx):
+	@$(MAKE) -s -C $(libx_path)
+
 %.o:%.c
-	$(cc) $(flags) -I -I$(lib_path) -c $< -o $@
+	$(cc) $(flags) -I -I$(lib_path) -I$(libx_path) -c $< -o $@
 
 clean:
 	rm -f $(o_files)

@@ -60,7 +60,8 @@ lib_c= 	ft_isalpha.c\
 			ft_putnbrhexupper_fd.c\
 			ft_hex_len.c\
 			ft_ptr_putnbrhex_fd.c\
-			ft_ptr_len.c
+			ft_ptr_len.c\
+			ft_atof.c
 
 lib_o= $(lib_c:.c=.o)
 
